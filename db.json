@@ -16,5 +16,30 @@
   "profile": {
     "name": "typicode"
   },
-  "employees": []
+  "employees": [
+    {
+      "firstname": " markus",
+      "lastname": " pade",
+      "email": "pade@gmail.com",
+      "dob": "2024-01-02T18:30:00.000Z",
+      "gender": "female",
+      "education": "Post Graduate",
+      "company": "google",
+      "experience": 8,
+      "package": 25,
+      "id": 3
+    },
+    {
+      "firstname": " Akanksha",
+      "lastname": "Vaidya",
+      "email": "abc@gmail.com",
+      "dob": "2024-01-01T18:30:00.000Z",
+      "gender": "female",
+      "education": "Post Graduate",
+      "company": "TSIN",
+      "experience": 12,
+      "package": 2121,
+      "id": 5
+    }
+  ]
 }

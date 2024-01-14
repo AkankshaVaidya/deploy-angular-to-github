@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { EmployeeService } from '../services/employee.service';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { CoreServiceService } from '../core/core-service.service';
 
 @Component({
   selector: 'app-emp-add-edit',
@@ -21,7 +22,9 @@ export class EmpAddEditComponent implements OnInit {
 
  constructor(private _fb: FormBuilder , 
              private _empservice:EmployeeService ,
-             private _dialogRef: MatDialogRef<EmpAddEditComponent>){
+             private _dialogRef: MatDialogRef<EmpAddEditComponent>,
+             @Inject(MAT_DIALOG_DATA) public data:any,
+             private _coreService : CoreServiceService){
   this.empForm= this._fb.group({
     firstname: ' ',
     lastname:' ',
@@ -35,19 +38,34 @@ export class EmpAddEditComponent implements OnInit {
   });
  }
  ngOnInit(): void {
+  this.empForm.patchValue(this.data);
      
  }
  onFormSubmit(){
   if(this.empForm.valid){
-    this._empservice.addEmployee(this.empForm.value).subscribe({
-      next:(val:any)=>{
-      alert('Employee added successfully');
-      this._dialogRef.close(true);
-      },
-      error: (err:any) =>{
-        console.error(err)
-      }
-    })
+    if(this.data){
+      this._empservice.updateEmployee(this.data.id ,this.empForm.value).subscribe({
+        next:(val:any)=>{
+        this._coreService.openSnackBar('Employee deatil updated'); 
+        this._dialogRef.close(true);
+        },
+        error: (err:any) =>{
+          console.error(err)
+        }
+      })
+
+    }else{
+      this._empservice.addEmployee(this.empForm.value).subscribe({
+        next:(val:any)=>{
+        this._coreService.openSnackBar('Employee added successfully','done'); 
+        this._dialogRef.close(true);
+        },
+        error: (err:any) =>{
+          console.error(err)
+        }
+      })
+    }
+    
   }
  }
 
