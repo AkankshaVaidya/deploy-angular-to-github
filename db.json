@@ -16,42 +16,5 @@
   "profile": {
     "name": "typicode"
   },
-  "employees": [
-    {
-      "firstname": "Akanksha",
-      "lastname": "Vaidya",
-      "email": "akankshavaidya1999@gmail.com",
-      "dob": "2016-06-07T18:30:00.000Z",
-      "gender": "female",
-      "education": "Diploma",
-      "company": "Google",
-      "experience": 3,
-      "package": 12,
-      "id": 1
-    },
-    {
-      "firstname": " Sahil",
-      "lastname": " Dadas",
-      "email": "sahil@gmail.com",
-      "dob": "2023-12-22T18:30:00.000Z",
-      "gender": "male",
-      "education": "Post Graduate",
-      "company": "google",
-      "experience": 2,
-      "package": 12,
-      "id": 2
-    },
-    {
-      "firstname": " Harsh",
-      "lastname": "Vaidya",
-      "email": "harsh@gmail.com",
-      "dob": "2023-11-21T18:30:00.000Z",
-      "gender": "male",
-      "education": "Diploma",
-      "company": "Raymond",
-      "experience": 1,
-      "package": 5,
-      "id": 3
-    }
-  ]
+  "employees": []
 }

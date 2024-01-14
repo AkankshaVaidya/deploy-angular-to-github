@@ -31,10 +31,17 @@ export class AppComponent implements OnInit{
   @ViewChild(MatSort) sort!: MatSort;
 
 
-  constructor(private _dialog: MatDialog,private _empService:EmployeeService){}
+  constructor(private _dialog: MatDialog, private _empService:EmployeeService){}
 
   openAddEmpEditForm(){
-    this._dialog.open(EmpAddEditComponent);
+    const dialogRef= this._dialog.open(EmpAddEditComponent);
+    dialogRef.afterClosed().subscribe({
+      next:(val) =>{
+        if(val){
+          this.getEmployeeList();
+        }
+      }
+    })
   }
   getEmployeeList(){
     this._empService.getEmployeeList().subscribe({
@@ -61,6 +68,7 @@ export class AppComponent implements OnInit{
    this._empService.deleteEmployee(id).subscribe({
     next: (res) =>{
       alert('Employee deleted');
+      this.getEmployeeList();
     },
     error:console.log,
    });

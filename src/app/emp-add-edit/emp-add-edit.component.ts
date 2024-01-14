@@ -42,7 +42,7 @@ export class EmpAddEditComponent implements OnInit {
     this._empservice.addEmployee(this.empForm.value).subscribe({
       next:(val:any)=>{
       alert('Employee added successfully');
-      this._dialogRef.close();
+      this._dialogRef.close(true);
       },
       error: (err:any) =>{
         console.error(err)
