@@ -1,14 +1,14 @@
 {
   "posts": [
     {
-      "id": 1,
+      "id": "1",
       "title": "json-server",
       "author": "typicode"
     }
   ],
   "comments": [
     {
-      "id": 1,
+      "id": "1",
       "body": "some comment",
       "postId": 1
     }
@@ -27,19 +27,19 @@
       "company": "google",
       "experience": 8,
       "package": 25,
-      "id": 3
+      "id": "3"
     },
     {
-      "firstname": " Akanksha",
-      "lastname": "Vaidya",
+      "id": "6ea7",
+      "firstname": " Mathias",
+      "lastname": " pade",
       "email": "abc@gmail.com",
-      "dob": "2024-01-01T18:30:00.000Z",
+      "dob": "2023-12-31T18:30:00.000Z",
       "gender": "female",
-      "education": "Post Graduate",
-      "company": "TSIN",
-      "experience": 12,
-      "package": 2121,
-      "id": 5
+      "education": "Diploma",
+      "company": "google",
+      "experience": 3,
+      "package": 12
     }
   ]
 }
